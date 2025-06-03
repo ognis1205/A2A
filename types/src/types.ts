@@ -133,7 +133,7 @@ export interface Task {
   artifacts?: Artifact[];
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
   /** Event type */
   kind: "task";
@@ -169,7 +169,7 @@ export interface TaskStatusUpdateEvent {
   final: boolean;
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 // --8<-- [end:TaskStatusUpdateEvent]
@@ -191,7 +191,7 @@ export interface TaskArtifactUpdateEvent {
   lastChunk?: boolean;
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 // --8<-- [end:TaskArtifactUpdateEvent]
@@ -202,8 +202,10 @@ export interface TaskIdParams {
   /** Task id. */
   id: string;
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
+  /** Allows compatibility with JSON-RPC { [key: string]: unknown } shape. */
+  [key: string]: unknown;
 }
 // --8<-- [end:TaskIdParams]
 
@@ -238,8 +240,10 @@ export interface MessageSendParams {
   configuration?: MessageSendConfiguration;
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
+  /** Allows compatibility with JSON-RPC { [key: string]: unknown } shape. */
+  [key: string]: unknown;
 }
 // --8<-- [end:MessageSendParams]
 
@@ -271,7 +275,7 @@ export interface Artifact {
   parts: Part[];
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 // --8<-- [end:Artifact]
@@ -285,7 +289,7 @@ export interface Message {
   parts: Part[];
   /** Extension metadata. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
   /** List of tasks referenced as context by this message.*/
   referenceTaskIds?: string[];
@@ -305,7 +309,7 @@ export interface Message {
 export interface PartBase {
   /** Optional metadata associated with the part. */
   metadata?: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 // --8<-- [end:PartBase]
@@ -366,7 +370,7 @@ export interface DataPart extends PartBase {
   /** Structured data content
    */
   data: {
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 // --8<-- [end:DataPart]
@@ -406,6 +410,8 @@ export interface TaskPushNotificationConfig {
   taskId: string;
   /** Push notification configuration. */
   pushNotificationConfig: PushNotificationConfig;
+  /** Allows compatibility with JSON-RPC { [key: string]: unknown } shape. */
+  [key: string]: unknown;
 }
 // --8<-- [end:TaskPushNotificationConfig]
 
@@ -612,7 +618,7 @@ export interface JSONRPCRequest extends JSONRPCMessage {
   /**
    * A Structured value that holds the parameter values to be used during the invocation of the method.
    */
-  params?: { [key: string]: any };
+  params?: { [key: string]: unknown };
 }
 // --8<-- [end:JSONRPCRequest]
 
@@ -636,7 +642,7 @@ export interface JSONRPCError {
    * A Primitive or Structured value that contains additional information about the error.
    * This may be omitted.
    */
-  data?: any;
+  data?: unknown;
 }
 // --8<-- [end:JSONRPCError]
 
@@ -652,7 +658,7 @@ export interface JSONRPCSuccessResponse extends JSONRPCMessage {
   /**
    * The result object on success
    */
-  result: any;
+  result: unknown;
 
   error?: never; // Optional 'never' helps enforce exclusivity
 }

@@ -1010,6 +1010,7 @@
       "type": "object"
     },
     "MessageSendParams": {
+      "additionalProperties": {},
       "description": "Sent by the client to the agent as a request. May create, continue or restart a task.",
       "properties": {
         "configuration": {
@@ -1510,6 +1511,7 @@
       "type": "object"
     },
     "TaskIdParams": {
+      "additionalProperties": {},
       "description": "Parameters containing only a task ID, used for simple task operations.",
       "properties": {
         "id": {
@@ -1565,6 +1567,7 @@
       "type": "object"
     },
     "TaskPushNotificationConfig": {
+      "additionalProperties": {},
       "description": "Parameters for setting or getting push notification configuration for a task",
       "properties": {
         "pushNotificationConfig": {

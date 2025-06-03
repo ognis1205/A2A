@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "generate": "./node_modules/.bin/typescript-json-schema tsconfig.json \"*\" --defaultNumberType integer --required > ../specification/json/a2a.json"
+    "generate": "./node_modules/.bin/typescript-json-schema tsconfig.json \"*\" --defaultNumberType integer --required > ../specification/json/a2a.json && prettier --config ../.prettierrc --write ../specification/json/a2a.json"
   },
   "author": "",
   "description": "A2A Types",
   "dependencies": {
+    "prettier": "^3.5.3",
     "typescript-json-schema": "^0.65.1"
   },
   "devDependencies": {

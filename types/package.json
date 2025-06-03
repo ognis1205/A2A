@@ -1,6 +1,7 @@
 {
   "name": "types",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "generate": "./node_modules/.bin/typescript-json-schema tsconfig.json \"*\" --defaultNumberType integer --required > ../specification/json/a2a.json && prettier --write ../specification/json/a2a.json"

@@ -48,6 +48,7 @@ KRW
 LHR
 LLM
 LLMs
+Linkset
 MWpm
 OIDC
 OOa
@@ -146,6 +147,8 @@ gpt
 gstatic
 gweb
 hqdefault
+httpapi
+iana
 iat
 ietf
 inbox
@@ -159,6 +162,7 @@ kty
 langgraph
 linenums
 linkedin
+linkset
 linting
 llm
 llms

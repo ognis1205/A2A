@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "generate": "run-s generate:prettier generate:schema",
-    "generate:schema": "./node_modules/.bin/typescript-json-schema tsconfig.json \"*\" --defaultNumberType integer --required --out ../specification/json/a2a.json",
+    "generate:schema": "typescript-json-schema tsconfig.json \"*\" --defaultNumberType integer --required --out ../specification/json/a2a.json",
     "generate:prettier": "prettier src/types.ts --write"
   },
   "author": "",
